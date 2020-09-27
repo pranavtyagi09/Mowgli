@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mowgli</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script src="main.js"></script>
+</head>
+<body>
+<div class="container" style="padding: 5%;">
+    <div >
+        <div >
+        <h1>Fill in the below form:</h1>
+        <form id="form">
+            <div class="form-group">
+                <label for="fname">Full Name:</label>
+                <input class="form-control" type="text" id="fname" name="fname" required>
+            </div>
+            <div class="form-group">
+                <label for="fathername">Father Name:</label>
+                <input class="form-control" type="text" id="fathername" name="fathername" required>
+            </div>
+            <div class="form-group">
+                <label for="caddress">Complaint Address:</label>
+                <input class="form-control" type="text" id="caddress" name="caddress" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input class="form-control" type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Select a time:</label>
+                <input class="form-control" type="time" id="time" name="time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input class="form-control" type="text" id="location" name="location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="details">Details:</label>
+                <textarea class="form-control" id="details" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input class="form-control" type="tel" id="phone" name="phone" pattern="[0-9]{10}">
+                <small>Format: 98xxxxxxxx (10 digits)</small>
+            </div>
+
+            <div class="form-group">
+                <label for="dist">District:</label>
+                <input class="form-control" type="text" id="dist" name="dist">
+            </div>
+
+            <div class="form-group">
+                <label for="state">State</label>
+                <select name="state" id="state" class="form-control" required>
+                    <option value="NA">Choose...</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                    <option value="Daman and Diu">Daman and Diu</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                </select>
+              </div>
+            
+            <!--Submit Button-->
+            <button id="btn-sub" class="btn btn-primary">Submit</button>
+        </form>
+        <br/>
+        <hr>
+        <br/>
+        <div id="app-res" style="display: none;">
+            <h3>Your Application:</h3>
+        <div class="WordSection1" id="output" style="background-color: white; padding: 10%; border: white;">
+
+            <p class=MsoNormal>To,<o:p></o:p></p>
+            
+            <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+            
+            <p class=MsoNormal>Senior Superintendent of Police<o:p></o:p></p>
+            
+            <p class=MsoNormal><span class="state-out"></span> Police <o:p></o:p></p>
+            
+            <p class=MsoNormal><span class="dist-out"></span> - <span class="state-out"></span><o:p></o:p></p>
+            
+            <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+            
+            <p class=MsoNormal>Subject - Harassed for feeding street dogs at <span class="location-out"></span>, <o:p></o:p></p>
+            
+            <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+            
+            <p class=MsoNormal>I, <span class="fname-out"></span> s/o /
+            d/o <span class="fathername-out"></span> ,</span> r/o <span class="caddress-out"></span> , without any pressure would like to
+            inform details of the following incident that transpired on <span class="date-out"></span> at
+            <span class="time-out"></span>hrs near <span class="location-out"></span>. <o:p></o:p></p>
+            
+            <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+            
+            <p class=MsoNormal>I write to inform you're honourable that on <span class="date-out"></span> at <span class="time-out"></span>
+            near <span class="location-out"></span> when I was feeding street dogs as part of my daily route from
+            past (x) years. <o:p></o:p></p>
+            
+            <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+            
+            <p class=MsoNormal><span class="details-out"></span><o:p></o:p></p>
+            
+            <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+            
+            <p class=MsoNormal>I carefully would like to point out to Article 51-A(g) and
+            Article 48-A enshrined in our constitution which defines citizenry and states
+            duties for care and <span class=SpellE>well being</span> of animals. Further, I
+            would like to refer to Delhi High Court's 2011 order asking the police to
+            &quot;protect dogs and dog feeders&quot; and has made it a punishable offence
+            in case anyone restricts, prohibits or causes inconvenience to any person
+            feeding a street dog or resorts to removal dislocation or killing of a dog.<o:p></o:p></p>
+            
+            <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+            
+            <p class=MsoNormal>I hence request you're honourable to intervene and enforce
+            protection warranted under law of the land.<o:p></o:p></p>
+            
+            <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+            
+            <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+            
+            <p class=MsoNormal>Yours faithfully,<o:p></o:p></p>
+            
+            <p class=MsoNormal><span class="fname-out"></span><o:p></o:p></p>
+            
+            <p class=MsoNormal><span class="phone-out"></span></p>
+            
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
