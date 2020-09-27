@@ -9,59 +9,58 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 <script src="main.js"></script>
 </head>
-<body>
-<div class="container" style="padding: 5%;">
-    <div >
-        <div >
-        <h1>Fill in the below form:</h1>
-        <form id="form">
+<body style="font-size: 2rem;">
+<div class="container-fluid" style="padding: 5%;">
+        <h1>Report animal cruelty below:</h1>
+        <br>
+        <form id="form" style="padding: 5%; border: lightgrey solid 1px;">
             <div class="form-group">
                 <label for="fname">Full Name:</label>
-                <input class="form-control" type="text" id="fname" name="fname" required>
+                <input class="form-control form-control-lg" type="text" id="fname" name="fname" required>
             </div>
             <div class="form-group">
                 <label for="fathername">Father Name:</label>
-                <input class="form-control" type="text" id="fathername" name="fathername" required>
+                <input class="form-control form-control-lg" type="text" id="fathername" name="fathername" required>
             </div>
             <div class="form-group">
                 <label for="caddress">Complaint Address:</label>
-                <input class="form-control" type="text" id="caddress" name="caddress" required>
+                <input class="form-control form-control-lg" type="text" id="caddress" name="caddress" required>
             </div>
 
             <div class="form-group">
                 <label for="date">Date:</label>
-                <input class="form-control" type="date" id="date" name="date" required>
+                <input class="form-control form-control-lg" type="date" id="date" name="date" required>
             </div>
 
             <div class="form-group">
                 <label for="time">Select a time:</label>
-                <input class="form-control" type="time" id="time" name="time" required>
+                <input class="form-control form-control-lg" type="time" id="time" name="time" required>
             </div>
 
             <div class="form-group">
                 <label for="location">Location:</label>
-                <input class="form-control" type="text" id="location" name="location" required>
+                <input class="form-control form-control-lg" type="text" id="location" name="location" required>
             </div>
 
             <div class="form-group">
                 <label for="details">Details:</label>
-                <textarea class="form-control" id="details" rows="3"></textarea>
+                <textarea class="form-control form-control-lg" id="details" rows="3"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="phone">Phone Number:</label>
-                <input class="form-control" type="tel" id="phone" name="phone" pattern="[0-9]{10}">
+                <input class="form-control form-control-lg" type="tel" id="phone" name="phone" pattern="[0-9]{10}">
                 <small>Format: 98xxxxxxxx (10 digits)</small>
             </div>
 
             <div class="form-group">
                 <label for="dist">District:</label>
-                <input class="form-control" type="text" id="dist" name="dist">
+                <input class="form-control form-control-lg" type="text" id="dist" name="dist">
             </div>
 
             <div class="form-group">
                 <label for="state">State</label>
-                <select name="state" id="state" class="form-control" required>
+                <select name="state" id="state" class="form-control form-control-lg" required>
                     <option value="NA">Choose...</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                     <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -101,9 +100,9 @@
                     <option value="West Bengal">West Bengal</option>
                 </select>
               </div>
-            
+            <br>
             <!--Submit Button-->
-            <button id="btn-sub" class="btn btn-primary">Submit</button>
+            <button id="btn-sub" class="btn btn-primary btn-lg btn-block" style="font-size: 2rem;">Submit</button>
         </form>
         <br/>
         <hr>
@@ -167,9 +166,7 @@
             <p class=MsoNormal><span class="fname-out"></span><o:p></o:p></p>
             
             <p class=MsoNormal><span class="phone-out"></span></p>
-            
-        </div>
-        </div>
+
     </div>
     </div>
 </div>
